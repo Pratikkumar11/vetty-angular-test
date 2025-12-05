@@ -1,23 +1,31 @@
-<p>login works!</p>
-<div style="max-width: 300px; margin: 40px auto; font-family: Arial;">
-  <h2>Login</h2>
+<div class="login-page">
+  <div class="login-card">
+    <h1>Log in</h1>
 
-  <input
-    type="email"
-    placeholder="Email"
-    #email
-    style="display:block; margin-bottom:10px; width:100%; padding:6px;"
-  />
+    <form (ngSubmit)="login(email.value, password.value)">
+      <div class="form-group">
+        <input
+          #email
+          type="text"
+          placeholder="Username"
+        />
+      </div>
 
-  <input
-    type="password"
-    placeholder="Password"
-    #password
-    style="display:block; margin-bottom:10px; width:100%; padding:6px;"
-  />
+      <div class="form-group">
+        <input
+          #password
+          type="password"
+          placeholder="Password"
+        />
+      </div>
 
-  <button (click)="login(email.value, password.value)"
-    style="padding: 8px 15px;">
-    Login
-  </button>
+      <button type="submit" class="primary-btn">
+        Log in
+      </button>
+    </form>
+
+    <div class="secondary-text">
+      or, <a href="#">sign up</a>
+    </div>
+  </div>
 </div>
