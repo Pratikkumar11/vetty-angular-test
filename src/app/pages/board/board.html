@@ -1,1 +1,102 @@
-<p>board works!</p>
+<div class="board-layout">
+  <!-- Left sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">Design team</div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item">Roadmap</button>
+      <button class="nav-item nav-item--active">Board</button>
+      <button class="nav-item">Add item</button>
+      <button class="nav-item">Project settings</button>
+    </nav>
+  </aside>
+
+  <!-- Main area -->
+  <main class="board-main">
+    <header class="board-header">
+      <h1>✨ Jira board (Vetty) ✨</h1>
+    </header>
+
+    <section class="board-columns">
+      <!-- To Do -->
+      <div class="column">
+        <div class="column-header">
+          <span>To-Do</span>
+          <button class="add-btn" (click)="addTask('todo')">+</button>
+        </div>
+
+        <div class="column-body">
+          <div class="task-card" *ngFor="let task of todo">
+            <div class="task-title">{{ task.title }}</div>
+            <div class="task-id">{{ task.id }}</div>
+            <div class="task-description" *ngIf="task.description">
+              {{ task.description }}
+            </div>
+          </div>
+
+          <button class="empty-add" (click)="addTask('todo')">+</button>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="column">
+        <div class="column-header">
+          <span>In Progress</span>
+          <button class="add-btn" (click)="addTask('in-progress')">+</button>
+        </div>
+
+        <div class="column-body">
+          <div class="task-card" *ngFor="let task of inProgress">
+            <div class="task-title">{{ task.title }}</div>
+            <div class="task-id">{{ task.id }}</div>
+            <div class="task-description" *ngIf="task.description">
+              {{ task.description }}
+            </div>
+          </div>
+
+          <button class="empty-add" (click)="addTask('in-progress')">+</button>
+        </div>
+      </div>
+
+      <!-- Need Review -->
+      <div class="column">
+        <div class="column-header">
+          <span>Need Review</span>
+          <button class="add-btn" (click)="addTask('review')">+</button>
+        </div>
+
+        <div class="column-body">
+          <div class="task-card" *ngFor="let task of review">
+            <div class="task-title">{{ task.title }}</div>
+            <div class="task-id">{{ task.id }}</div>
+            <div class="task-description" *ngIf="task.description">
+              {{ task.description }}
+            </div>
+          </div>
+
+          <button class="empty-add" (click)="addTask('review')">+</button>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="column">
+        <div class="column-header">
+          <span>Completed</span>
+          <button class="add-btn" (click)="addTask('done')">+</button>
+        </div>
+
+        <div class="column-body">
+          <div class="task-card" *ngFor="let task of done">
+            <div class="task-title">{{ task.title }}</div>
+            <div class="task-id">{{ task.id }}</div>
+            <div class="task-description" *ngIf="task.description">
+              {{ task.description }}
+            </div>
+          </div>
+
+          <button class="empty-add" (click)="addTask('done')">+</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
