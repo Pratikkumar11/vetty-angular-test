@@ -1,59 +1,74 @@
-# VettyAngularTest
+Vetty Angular Assignment – Frontend Test
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+A simple Angular application demonstrating a login page, routing, and a Trello-style board page with dynamic task creation.
 
-## Development server
-
-To start a local development server, run:
-
-```bash
+ How to Run
+git clone https://github.com/Pratikkumar11/vetty-angular-test.git
+cd vetty-angular-test
+npm install
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Open in browser:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+http://localhost:4200/login
 
-```bash
-ng generate component component-name
-```
+ Login
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Use any non-empty username and password, e.g.:
 
-```bash
-ng generate --help
-```
+Username: admin
+Password: admin123
 
-## Building
 
-To build the project run:
+After login → automatically redirected to the board page.
 
-```bash
-ng build
-```
+ Board Page Features
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3 Columns: To Do, In Progress, Completed
 
-## Running unit tests
+Click + under any column → enter task → task appears immediately
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Tasks are stored in component state (todo[], progress[], completed[])
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+ Project Structure
+src/app/pages/login
+ ├─ login.html
+ ├─ login.scss
+ └─ login.ts
 
-```bash
-ng e2e
-```
+src/app/pages/board
+ ├─ board.html
+ ├─ board.scss
+ └─ board.ts
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+src/app/app.routes.ts
 
-## Additional Resources
+Routing
+/login     → LoginComponent
+/board     → BoardComponent
+/          → redirects to /login
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ UI Overview
+
+Centered login card with modern styling
+
+Dark themed board layout
+
+Responsive 3-column grid
+
+Minimal SCSS for cards, buttons, spacing & layout
+
+
+
+
+
+
+
+
+Author
+
+Pratik Kumar — Frontend Developer
+
